@@ -1,0 +1,13 @@
+diff --git a/fishing.lua b/fishing.lua
+index 8061b2e..a678272 100644
+--- a/fishing.lua
++++ b/fishing.lua
+@@ -74,7 +74,7 @@ local bonus_items = {
+ 	{"ethereal:firethorn", "glacier"},
+ 	{"ethereal:crystal_spike", "frost"},
+ 	{"ethereal:banana_bunch", "grove"},
+-	"tnt:tnt_stick",
++	-- "tnt:tnt_stick",
+ 	"bucket:bucket_empty",
+ 	"default:sword_steel 12000",
+ 	"ethereal:fishing_rod 9000"
