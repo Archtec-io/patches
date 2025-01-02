@@ -1,5 +1,5 @@
 diff --git a/init.lua b/init.lua
-index 54f4f24..20c2089 100644
+index 54f4f24..03f12aa 100644
 --- a/init.lua
 +++ b/init.lua
 @@ -78,14 +78,18 @@ local function get_player_attribute(player, key)
@@ -13,13 +13,13 @@ index 54f4f24..20c2089 100644
  local function get_hud_id(player)
 -	return hud_ids_by_player_name[player:get_player_name()]
 +	local hud_id = stamina.hud_ids_by_player_name[player:get_player_name()]
-+	minetest.log("action", "[stamina-dbg] get_hud_id() for '" .. player:get_player_name() .. "' returned '" .. hud_id .. "'")
++	minetest.log("action", "[stamina-dbg] get_hud_id() for '" .. player:get_player_name() .. "' returned '" .. (hud_id or "nil") .. "'")
 +	return hud_id
  end
  
  local function set_hud_id(player, hud_id)
 -	hud_ids_by_player_name[player:get_player_name()] = hud_id
-+	minetest.log("action", "[stamina-dbg] set_hud_id() for '" .. player:get_player_name() .. "' set HUD ID '" .. hud_id .. "'")
++	minetest.log("action", "[stamina-dbg] set_hud_id() for '" .. player:get_player_name() .. "' set HUD ID '" .. (hud_id or "nil") .. "'")
 +	stamina.hud_ids_by_player_name[player:get_player_name()] = hud_id
  end
  
