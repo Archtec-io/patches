@@ -1,0 +1,26 @@
+diff --git a/init.lua b/init.lua
+index 54f4f24..20c2089 100644
+--- a/init.lua
++++ b/init.lua
+@@ -78,14 +78,18 @@ local function get_player_attribute(player, key)
+ 	return meta:get_string(key)
+ end
+ 
+-local hud_ids_by_player_name = {}
++-- Context: https://github.com/Archtec-io/bugtracker/issues/221
++stamina.hud_ids_by_player_name = {}
+ 
+ local function get_hud_id(player)
+-	return hud_ids_by_player_name[player:get_player_name()]
++	local hud_id = stamina.hud_ids_by_player_name[player:get_player_name()]
++	minetest.log("action", "[stamina-dbg] get_hud_id() for '" .. player:get_player_name() .. "' returned '" .. hud_id .. "'")
++	return hud_id
+ end
+ 
+ local function set_hud_id(player, hud_id)
+-	hud_ids_by_player_name[player:get_player_name()] = hud_id
++	minetest.log("action", "[stamina-dbg] set_hud_id() for '" .. player:get_player_name() .. "' set HUD ID '" .. hud_id .. "'")
++	stamina.hud_ids_by_player_name[player:get_player_name()] = hud_id
+ end
+ 
+ --- SATURATION API ---
